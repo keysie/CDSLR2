@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python-Modul",
+            "name": "Software",
             "type": "python",
             "request": "launch",
-            "module": "cdslr2_alpaca.main",
+            "module": "software.cdslr2_alpaca.main",
             "justMyCode": true
         }
     ]
