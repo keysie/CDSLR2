@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 class MTP_Camera:
-    def __init__(self, mount_point: str, sub_folder: str):
+    def __init__(self, mount_point: str, sub_folder: str) -> None:
         self.mountpt = mount_point
         self.imgpath = os.path.join(mount_point, sub_folder)
         if not os.path.exists(self.imgpath):
@@ -26,7 +26,8 @@ class MTP_Camera:
                 '$driveEject.Namespace(17).ParseName("""' + self.mountpt + '""").InvokeVerb("""Eject""")'
                 )
         else:
-            NotImplementedError('Currently only work on Windows. Sorry.')
+            #TODO: Implement code to handle unmounting in other OSes
+            NotImplementedError('Unmounting FS currently only work on Windows. Sorry.')
 
 
 my_camera = MTP_Camera(mount_point='G:', sub_folder='/DCIM/100MSDCF')
