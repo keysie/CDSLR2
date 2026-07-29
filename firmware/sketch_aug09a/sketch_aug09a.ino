@@ -31,6 +31,22 @@
 #define SHUTTER  2
 #define FOCUS    3
 
+const char *INFOTEXT =
+  "CDSLR² (Clever DSLR Remote) by Keysie\n"
+  "\n"
+  "Connect Sony DLSR via proprietary remote cable and USB (optional).\n"
+  "Helps remote controlling the camera from a computer and moving pictures\n"
+  "off the camera between shots over USB.\n"
+  "See https://github.com/keysie/CDSLR2 for pinout etc. \n"
+  "\n"
+  "Available commands:\n"
+  "U1 : Enable USB host connection\n"
+  "U0 : Disable USB host connection\n"
+  "S1 : Enable shutter pin - force shutter open or cycle shutter\n"
+  "S0 : Disable shutter pin - release shutter\n"
+  "F1 : Enable focus pin - force autofocus if enabled on camera\n"
+  "F0 : Disable focus pin - stop focusing\n";
+
 
 int sleepStatus = 0; // variable to store a request for sleep
 int count = 0; // counter
@@ -156,7 +172,7 @@ void loop()
     }
     if (done != true)
     {
-      Serial.println("Unknown command.");
+      Serial.print(INFOTEXT);
       done = true;
     }
   }
